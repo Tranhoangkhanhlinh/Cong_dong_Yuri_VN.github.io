@@ -49,11 +49,13 @@ body {
   ul h2 {
     margin-top: 1rem;
     margin-bottom: 0;
+    background-color: #fff;
+    opacity: 0.8;
   }
   ol h2,
   ul h2 {
     color: black;
-    font-weight: normal;
+    font-weight:bold;
   }
 
   ol > li {
@@ -74,7 +76,7 @@ body {
   }
   ol > li::after {
     content: "";
-    background-image: var(--bg);
+    background-image: var(--bg) ;
     position: absolute;
     inset: -20px;
     background-size: cover;
@@ -84,11 +86,11 @@ body {
     z-index: -1;
   }
   ol > li:hover {
-    color: blue;
+    color: black;
   }
   ol > li:hover::after {
-    transform: scale(1.1) rotate(4deg);
-    opacity: 0.8;
+    transform: scale(1.1);
+    opacity: 0.5;
   }
   
   @keyframes intro {
@@ -125,10 +127,12 @@ body {
     overflow: hidden;
     height: 100%;
     overflow-y: auto;
+    height: 90%;
     } 
     ol{
       height: calc(100%);
       overflow-x: auto;
+      overflow-y: hidden;
     }
   }
 
