@@ -3,13 +3,13 @@ $(document).ready(function(){
         data.doujinshi.forEach(element => {
             $(".mySwiper").append(`
             <swiper-slide>
-                <div class="preview_d" style="height: 100%; width: 100%;">
+                <div class="preview_d" style="height: 100%; width: 100%;align-content: space-around;">
                     <div class="content">
                         <div class="content-overlay"></div>
-                        <img class="content-image" src="`+element.page[0]+`" style="max-height: 100%; max-width: auto;">
+                        <img class="content-image" src="`+element.page[0]+`" style="max-height: 100%; max-width: 100%; object-fit: cover">
                         <div class="content-details fadeIn-bottom">
                             <a onclick="on('`+element.link+`')"><h3 class="content-title">Nhấp vào đây để đọc tiếp</h3></a>
-                            <a href="`+element.link+`"><p class="content-text">Nhấp vào đây để đến bài viết gốc</p></a>
+                            <a href="`+element.link+`" target="_blank"><p class="content-text">Nhấp vào đây để đến bài viết gốc</p></a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ function on(link) {
             if(element.link == link)
             {
                 element.page.forEach(ele=>{
-                    $(".mySwiper_overlay").append(`<swiper-slide><img src="`+ele+`" style="max-height: 100%;"></swiper-slide>`)
+                    $(".mySwiper_overlay").append(`<swiper-slide><img src="`+ele+`" style="max-height: 100%; max-width:100%"></swiper-slide>`)
                 })
             }
         });

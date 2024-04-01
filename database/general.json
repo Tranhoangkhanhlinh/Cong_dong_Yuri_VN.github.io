@@ -1,0 +1,103 @@
+{
+    "data": [
+        {
+            "title": "Tsuki ga Kirei Desu ne",
+            "name":[
+                {
+                    "en": "Isn't The Moon Beautiful?",
+                    "jp": "月が綺麗ですね"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/95165"
+        },{
+            "title": "Fuzoroi no Renri",
+            "name":[
+                {
+                    "en": "Rationalism of Irregularities",
+                    "jp": "不揃いの連理"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/118102"
+        },{
+            "title": "Adachi to Shimamura",
+            "name":[
+                {
+                    "en": "Rationalism of Irregularities",
+                    "jp": "安達としまむら",
+                    "jp_ro": "Adashima"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/120071"
+        },
+        {
+            "title": "The Guy She Was Interested in Wasn't a Guy at All",
+            "name":[
+                {
+                    "jp": "気になってる人が男じゃなかった",
+                    "jp_ro": "Kininatteru Hito ga Otoko Jyanakatta"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/155861"
+        },
+        {
+            "title": "Stardust Telepath",
+            "name":[
+                {
+                    "jp": "星屑テレパス",
+                    "jp_ro": "Hoshikuzu Telepath"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/127231"
+        },
+        {
+            "title": "Gushing over Magical Girls",
+            "name":[
+                {
+                    "jp": "魔法少女にあこがれて",
+                    "jp_ro": "Mahou Shoujo ni Akogarete"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/120680"
+        },
+        {
+            "title": "The Moon on a Rainy Night",
+            "name":[
+                {
+                    "jp": "雨夜の月",
+                    "jp_ro": "Amayo no Tsuki"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/142310"
+        },
+        {
+            "title": "Whisper Me a Love Song",
+            "name":[
+                {
+                    "jp": "ささやくように恋を唄う",
+                    "jp_ro": "Sasakoi"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/118625"
+        },
+        {
+            "title": "Usotsuki Satsuki wa Shi ga Mieru",
+            "name":[
+                {
+                    "en": "Liar Satsuki Can See Death",
+                    "jp": "ウソつき皐月は死が視える"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/132078"
+        },
+        {
+            "title": "Watashi o Tabetai, Hitodenashi",
+            "name":[
+                {
+                    "en": "A Monster Wants to Eat Me",
+                    "jp": "私を喰べたい、ひとでなし"
+                }
+            ],
+            "link": "https://myanimelist.net/manga/129656"
+        }
+    ]
+}
