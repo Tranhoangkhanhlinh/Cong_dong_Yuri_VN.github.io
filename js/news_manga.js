@@ -1,8 +1,9 @@
 var comic_db = null;
 var base_img_path ="https://cdn.myanimelist.net/images/manga/";
+import { get_data} from "./firebase.js"
 $(document).ready(function(){
-    $.getJSON('../database/comic.json', function(data) {
-            data.manga.forEach(element => {
+    get_data('manga').then(function(data) {
+            data.forEach(element => {
             $("ol").append(
                 `
                 <li style="--bg: url(\'`+base_img_path+element.cover_art+`\'">

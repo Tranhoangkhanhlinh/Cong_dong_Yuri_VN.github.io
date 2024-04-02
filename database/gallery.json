@@ -1,13 +1,33 @@
 {
     "photo": [
         {
-            "link": "GJ5vJg_XcAAOrWl?format=jpg&name=large"
+            "link": "https://x.com/rizu033/status/1774414673196281986?s=20",
+            "link_img": "https://pbs.twimg.com/media/GJ_8pFYaIAAY8R2?format=jpg&name=large"
         },
         {
-            "link": "GJ7XfwCaEAAVR2C?format=jpg&name=900x900"
+            "link": "https://x.com/Syonosuke9573/status/1772357165774184693?s=20",
+            "link_img": "https://pbs.twimg.com/media/GJitcmVa4AApQiS?format=jpg&name=medium"
         },
         {
-            "link": "GKAnUEHa8AAWBiU?format=jpg&name=4096x4096"
+            "link": "https://x.com/screwd_gamer/status/1773613550449140036?s=20",
+            "link_img": "https://pbs.twimg.com/media/GJ0kHuEbwAAKQao?format=jpg&name=large"
+        },
+        {
+            "link": "https://x.com/screwd_gamer/status/1773371880377909356?s=20",
+            "link_img": "https://pbs.twimg.com/media/GJxIUc6WcAEAk3E?format=jpg&name=large"
+        },
+        {
+            "link": "https://x.com/nyooomcat/status/1772654798514389247?s=20",
+            "link_img": "https://pbs.twimg.com/media/GJm8JRFbYAAf6QU?format=jpg&name=large"
+        }
+        ,
+        {
+            "link": "https://x.com/gyxx_04/status/1743623825986834679?s=20",
+            "link_img": "https://pbs.twimg.com/media/GDKYoD5aIAACRLl?format=jpg&name=large"
+        },
+        {
+            "link": "",
+            "link_img": "https://drive.google.com/thumbnail?id=1o4Ah6yZmzPU6M334xLiw9rZZDgSlUZa6"
         }
     ]
 }

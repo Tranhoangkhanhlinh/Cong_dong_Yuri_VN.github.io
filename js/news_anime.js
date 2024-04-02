@@ -1,8 +1,9 @@
 var comic_db = null;
 var base_img_path ="https://cdn.myanimelist.net/images/anime/";
+import { get_data} from "./firebase.js"
 $(document).ready(function(){
-    $.getJSON('../database/anime.json', function(data) {
-            data.anime.forEach(element => {
+    get_data('anime').then(function(data) {
+            data.forEach(element => {
             $("#main").append(
                 `
                 <div class="card" tabindex="0">

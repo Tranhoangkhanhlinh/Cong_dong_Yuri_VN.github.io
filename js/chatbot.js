@@ -7,10 +7,22 @@ const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
 const BOT_NAME = "    ChatBot";
 const PERSON_NAME = "Bạn";
 var JSON_file = null;
+async function getJSONAsync() {
+
+    // The await keyword saves us from having to write a .then() block.
+    const { get_data } = await import('./firebase.js');
+
+    // The result of the GET request is available in the json variable.
+    // We return it just like in a regular synchronous function.
+    get_data("chatbot").then(function(data) {localStorage.setItem("chatbot",  JSON.stringify(data))});
+    get_data("anime").then(function(data) {localStorage.setItem("anime",  JSON.stringify(data))});
+    get_data("manga").then(function(data) {localStorage.setItem("manga",  JSON.stringify(data))});
+}
 
 $(function() {
-    $.getJSON("./database/chatbot.json", function(json) {
-        JSON_file = json; // this will show the info it in firebug console
+    getJSONAsync().then( function(json) {
+        console.log(JSON.parse(localStorage.getItem("chatbot")));
+        JSON_file = JSON.parse(localStorage.getItem("chatbot")); // this will show the info it in firebug console
     });
 
     $('#msger-chat').on('submit', function(event) {
@@ -18,7 +30,7 @@ $(function() {
         if(msgerInput.value != ""){
         appendMessage(PERSON_NAME, PERSON_IMG, "right", msgerInput.value);
         //console.log(get_bot_answer(msgerInput.value,JSON_file.intents));
-        var bot_answer_info = get_bot_answer(msgerInput.value,JSON_file.intents);
+        var bot_answer_info = get_bot_answer(msgerInput.value,JSON_file);
         if(bot_answer_info.constructor === Array)
         {
         //$('#alert').html('<div class="alert alert-success">Thank you for your message!</div>').show();
@@ -28,32 +40,27 @@ $(function() {
         //Check tag for chatbot
         if(bot_answer_info[0]=="new_anime")
         {
-            $.getJSON("./database/anime.json", function(json) {
-                if(json.anime !== undefined)
+                if(JSON.parse(localStorage.getItem("anime")) !== undefined)
                 {
-                    json.anime.slice(0,10).forEach(element => {
+                    JSON.parse(localStorage.getItem("anime")).slice(0,10).forEach(element => {
                         appendMessage(BOT_NAME, BOT_IMG, "left", element.name);
                     });
-                }
-            });
+                }   
         }
         else if(bot_answer_info[0]=="new_manga")
         {
-            $.getJSON("./database/comic.json", function(json) {
-                if(json.manga !== undefined)
+                if(JSON.parse(localStorage.getItem("manga")) !== undefined)
                 {
-                    json.manga.slice(0,10).forEach(element => {
+                    JSON.parse(localStorage.getItem("manga")).slice(0,10).forEach(element => {
                         appendMessage(BOT_NAME, BOT_IMG, "left", element.name);
                     });
                 }
-            });
         }
         else if(bot_answer_info[0]=="suggest_anime")
         {
-            $.getJSON("./database/anime.json", function(json) {
-                if(json.anime !== undefined)
+                if(JSON.parse(localStorage.getItem("anime")) !== undefined)
                 {
-                    var list_anime = json.anime;
+                    var list_anime = JSON.parse(localStorage.getItem("chatbot"));
                     var list_suggest_anime = [];
                     for (var i = 0; i<5; i++){
                         var get_anime = list_anime[Math.floor(Math.random()*list_anime.length)];
@@ -64,14 +71,12 @@ $(function() {
                         appendMessage(BOT_NAME, BOT_IMG, "left", element.name);
                     });
                 }
-            });
         }
         else if(bot_answer_info[0]=="suggest_manga")
         {
-            $.getJSON("./database/comic.json", function(json) {
-                if(json.manga !== undefined)
+                if(JSON.parse(localStorage.getItem("manga")) !== undefined)
                 {
-                    var list_manga = json.manga;
+                    var list_manga = manga;
                     var list_suggest_manga = [];
                     for (var i = 0; i<5; i++){
                         var get_manga = list_manga[Math.floor(Math.random()*list_manga.length)];
@@ -82,7 +87,6 @@ $(function() {
                         appendMessage(BOT_NAME, BOT_IMG, "left", element.name);
                     });
                 }
-            });
         }
         } else {
         $('#alert').html('<div class="alert alert-danger">' + "Something went wrong" + '</div>').show();

@@ -31,6 +31,10 @@ swiper-slide .preview_d img {
   display: inline;
   object-fit: cover;
 }
+
+html::-webkit-scrollbar{
+  display: none;
+}
 .content {
 position: relative;
 margin: auto;
@@ -38,8 +42,8 @@ overflow: hidden;
 display: flex;
 max-height: max-content;
 align-items: center;
-height: 100%;
-width: 100%;
+height: 100vh;
+width: 100vw;
 max-width: max-content;
 }
 
@@ -116,4 +120,8 @@ bottom: 0;
 background-color: rgba(0,0,0,0.5);
 z-index: 2;
 cursor: pointer;
+}
+
+.mySwiper_overlay{
+  z-index: 1;
 }

@@ -4,13 +4,24 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../css/doujinshi.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
 </head>
 
 <body>
 
-  <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true">
-  </swiper-container>
+  <div id="swiper_container" class="swiper-container" >
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
   <div id="overlay" >
     <div onclick="off()" style="position: absolute; right: 10px; top:10px">X</div>
     <swiper-container class="mySwiper_overlay" pagination="true" pagination-type="fraction">
@@ -19,6 +30,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="../js/doujinshi.js"></script>
 </body>

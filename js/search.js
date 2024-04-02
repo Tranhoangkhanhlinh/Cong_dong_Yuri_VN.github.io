@@ -1,9 +1,10 @@
-$(document).ready(function () {
-$.getJSON('../database/general.json', function(data) {
-    localStorage.setItem("general", data);
-    data.data.forEach(element => {
+import { get_data} from "./firebase.js"
+$(document).ready(function(){
+    get_data('dataset').then(function(data) {
+    data.forEach(element => {
         var alternative_title = [];
         element.name.forEach(ele => { 
+            if (ele.vi !== undefined){ alternative_title.push(ele.vi)};
             if (ele.en !== undefined){ alternative_title.push(ele.en)};
             if (ele.jp !== undefined){ alternative_title.push(ele.jp)};
             if (ele.jp_ro !== undefined){ alternative_title.push(ele.jp_ro)};
