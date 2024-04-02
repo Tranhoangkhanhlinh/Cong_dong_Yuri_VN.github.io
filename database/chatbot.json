@@ -1,0 +1,92 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "yoooooooooo",
+                "Hi",
+                "Xin chào",
+                "Chào bạn",
+                "Yo",
+                "hello",
+                "chào",
+                "eyyy"
+            ],
+            "responses": [
+                "Chào bạn",
+                "Tôi có thể giúp gì cho bạn?",
+                "Rất vui được gặp bạn",
+                "Xin chào"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Cảm ơn",
+                "tks",
+                "thanks",
+                "bye",
+                "pái pai"
+            ],
+            "responses": [
+                "Không có gì",
+                "Rất vui vì giúp được bạn",
+                "Vinh hạnh của tôi"
+            ],
+            "context": [
+                ""
+            ]
+        },{
+            "tag": "new_anime",
+            "patterns": [
+                "Dạo này có bộ anime nào hay không?",
+                "Anime mới"
+            ],
+            "responses": [
+                "Dưới đây là một số bộ anime mà tôi mới cập nhật"
+            ],
+            "context": [
+                ""
+            ]
+        },{
+            "tag": "new_manga",
+            "patterns": [
+                "Dạo này có bộ manga nào hay không?",
+                "manga mới"
+            ],
+            "responses": [
+                "Dưới đây là một số bộ Manga mà tôi mới cập nhật"
+            ],
+            "context": [
+                ""
+            ]
+        },{
+            "tag": "suggest_anime",
+            "patterns": [
+                "Đề xuất một vài bộ anime",
+                "Đề xuất anime"
+            ],
+            "responses": [
+                "Dưới đây là một số bộ Anime khá hay"
+            ],
+            "context": [
+                ""
+            ]
+        },{
+            "tag": "suggest_manga",
+            "patterns": [
+                "Đề xuất một vài bộ manga",
+                "Đề xuất manga"
+            ],
+            "responses": [
+                "Dưới đây là một số bộ Manga khá hay"
+            ],
+            "context": [
+                ""
+            ]
+        }
+    ]
+}
