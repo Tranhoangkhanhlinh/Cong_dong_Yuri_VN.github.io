@@ -21,7 +21,7 @@ async function getJSONAsync() {
 
 $(function() {
     getJSONAsync().then( function(json) {
-        console.log(JSON.parse(localStorage.getItem("chatbot")));
+        //console.log(JSON.parse(localStorage.getItem("chatbot")));
         JSON_file = JSON.parse(localStorage.getItem("chatbot")); // this will show the info it in firebug console
     });
 

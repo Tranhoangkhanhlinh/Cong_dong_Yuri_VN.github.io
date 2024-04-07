@@ -1,0 +1,61 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/update_anime.css">
+    
+    
+  </head>
+  
+  <body>
+    <section id="main_content">
+    </section>
+  </div>
+  <div class="button_container" id="toggle">
+    <button id="add_data_btn" style="background-color: white;"> Thêm dữ liệu
+      <span></span>
+    </button>
+  </div>
+    <div class="overlay" id="overlay">
+      <nav class="overlay-menu" style="display: grid;grid-auto-columns: 1.5fr 1fr; height: 90%;
+      grid-auto-flow: column;">
+        <div id="input_data">
+          <h1>Dữ liệu Anime muốn thêm</h1>
+          <div class="inputGroup">
+            <input id="anime_name" type="text" required="" autocomplete="off">
+            <label >Tên Anime</label>
+          </div>
+          <div class="inputGroup">
+            <input id="anime_cover_art" type="text" required="" autocomplete="off">
+            <label >Đường dẫn đến ảnh bìa</label>
+          </div>
+          <div class="inputGroup">
+            <input id="anime_des" type="text" required="" autocomplete="off">
+            <label >Mô tả Anime</label>
+          </div>
+          <div class="inputGroup">
+            <input id="anime_episode" type="text" required="" autocomplete="off">
+            <label >Số tập</label>
+          </div>
+          <button id="confirm_add" class="confirm_add"> Xác nhận thêm
+          </button>
+          <input id="anime_id" style="display: none;"></input>
+        </div>
+        <div id="preview_result" style="text-align: left;">
+            <img id="preview_anime_cover_art" src="https://dummyimage.com/415x600/333/ccc" style="width: 100%;
+            max-height: 50%;
+            object-fit: contain;">
+            <h2 id="preview_anime_name" style="font-size: 2rem;">Tên Anime</h2>
+            <p id="preview_anime_des" style="font-size: 1rem; max-height: 30%; overflow-y: scroll;">Yuzuko Aihara, a high school girl whose main interests are fashion, friends and having fun, is about to get a reality check. Due to her mom's remarriage, Yuzu has transferred to a new, all-girls school that is extremely strict. Her real education is about to begin. From day one, happy-go-lucky Yuzu makes enemies, namely the beautiful yet stern student council president Mei. So what happens when a dejected Yuzu returns home and discovers the shock of her life: that Mei is actually her new step-sister who has come to live with her? Even more surprising, when Mei catches Yuzu off-guard and kisses her out of the blue, what does it all mean?</p>
+            <p id="preview_anime_episode" style="font-size: 1rem;">Số tập: XX</p>
+            </div>
+      </nav>
+    </div>
+
+  <script  src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="module" src="../js/admin_update_anime_module.js"></script>
+  <script src="../js/admin_update_anime.js"></script>
+
+  </body></html>

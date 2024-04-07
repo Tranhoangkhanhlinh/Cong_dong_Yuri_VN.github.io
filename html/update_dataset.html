@@ -1,0 +1,378 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+  <style>
+  table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+  }
+  
+  table caption {
+      font-size: 1.5em;
+      margin: .5em 0 .75em;
+  }
+  table tr {
+      background-color: #fff;
+      border: 1px solid #e1e5e9;
+      padding: .35em;
+      border-radius: 3px;
+  }
+  table th,
+  table td {
+      padding: 1.625em;
+      text-align: center;
+      color: #9da9b9;
+      font-size: 14px;
+      font-family: cursive;
+      word-wrap: break-word;
+  }
+  
+  table th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: #0f82e6;
+      color: #FFF;
+  }
+  
+  table tbody tr td .btn-Name {
+      background: #0f82e6;
+      color: #FFF;
+      font-size: 13px;
+      padding: 10px 20px;
+      border: 0;
+      font-family: cursive;
+  }
+  
+  tbody tr:nth-child(even) {
+      background-color: #eee;
+  }
+  
+  tbody tr:nth-child(odd) {
+      background-color: #fff;
+  }
+  
+  @media screen and (max-aspect-ratio: 9/16) {
+      table {
+          border: 0;
+      }
+      table caption {
+          font-size: 1.3em;
+      }
+      table thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          position: absolute;
+          width: 1px;
+          padding: 0;
+      }
+      table tr {
+          border-bottom: 3px solid #e1e5e9;
+          display: block;
+          margin-bottom: .625em;
+      }
+      table th,
+      table td {
+          padding: 0.625em;
+      }
+      table td {
+          border-bottom: 1px solid #e1e5e9;
+          display: block;
+          font-size: .8em;
+          text-align: right;
+          color: #9da9b9;
+      }
+      table td::before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #656971;
+      }
+    }
+
+    #add_dataset_data_btn {
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+ border: 2px solid #24b4fb;
+ background-color: #24b4fb;
+ border-radius: 0.9em;
+ padding: 0.8em 1.2em 0.8em 1em;
+ transition: all ease-in-out 0.2s;
+ font-size: 16px;
+}
+
+#add_dataset_data_btn span {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #fff;
+ font-weight: 600;
+}
+
+#add_dataset_data_btn:hover {
+ background-color: #0071e2;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 106px;
+  height: 90%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+.group {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 120px 40px;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: black;
+  border-radius: 20px;
+  position: relative;
+}
+
+.form p {
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: .5px;
+  color: white;
+  margin-bottom: 0px
+}
+
+
+.main-input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6c6c6c;
+  background: transparent;
+  color: #ffffff;
+}
+
+.main-input:focus {
+  outline: none;
+  border-bottom-color: #42ff1c;
+}
+
+.lebal-email {
+  color: #999999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.main-input:focus ~ .lebal-email,
+.main-input:valid ~ .lebal-email {
+  top: -20px;
+  font-size: 14px;
+  color: #42ff1c;
+}
+
+.highlight-span {
+  position: absolute;
+  height: 60%;
+  width: 0px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.main-input:focus ~ .highlight-span {
+  -webkit-animation: input-focus 0.3s ease;
+  animation: input-focus 0.3s ease;
+}
+
+@keyframes input-focus {
+  from {
+    background: #42ff1c;
+  }
+
+  to {
+    width: 185px;
+  }
+}
+
+#confirm_btn {
+    margin-top: 50px;
+  padding: 1.3em 3em;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+#confirm_btn:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+#confirm_btn:active {
+  transform: translateY(-1px);
+}
+  </style>
+  
+    
+    
+  </head>
+  
+  <body>
+    <table>
+       <thead>
+          <tr>
+            <th><label>Link</label></th>
+            <th><label>Name</label></th>
+            <th><label>VN_name</label></th>
+            <th><label>EN_name</label></th>
+            <th><label>JP_name</label></th>
+            <th><label>JP_Romanized_name</label></th>
+            <th><label>Chức năng</label></th>
+          </tr>
+        </thead>
+        <tbody id="main_dataset_content">
+        </tbody>
+      </table>
+      <button id="add_dataset_data_btn" onclick="openNav()">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Thêm
+        </span>
+      </button>
+      <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <form class="form">
+                <p>Login</p>
+                <div class="group">
+                  <input required="true" class="main-input" type="text" id="link">
+                  <span class="highlight-span"></span>
+                  <label class="lebal-email">Link</label>
+                </div>
+                <div class="group">
+                    <input required="true" class="main-input" type="text" id="title">
+                    <span class="highlight-span"></span>
+                    <label class="lebal-email">Title</label>
+                </div>
+                <p>Các Tên khác</p>
+                <div class="group">
+                    <input required="true" class="main-input" type="text" id="VN">
+                    <span class="highlight-span"></span>
+                    <label class="lebal-email">Việt Nam</label>
+                  </div>
+                  <div class="group">
+                    <input required="true" class="main-input" type="text" id="EN">
+                    <span class="highlight-span"></span>
+                    <label class="lebal-email">Anh/Mỹ</label>
+                  </div>
+                  <div class="group">
+                    <input required="true" class="main-input" type="text" id="JP">
+                    <span class="highlight-span"></span>
+                    <label class="lebal-email">Nhật Bản</label>
+                  </div>
+                  <div class="group">
+                    <input required="true" class="main-input" type="text" id="JP_ro">
+                    <span class="highlight-span"></span>
+                    <label class="lebal-email">Nhật Bản (Romanized)</label>
+                  </div>
+                <button onclick="add_dataset_data()" id="confirm_btn" type="button"> Xác nhận thêm </button>
+            </form>
+        </div>
+      </div>
+  </body>
+  <script  src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="module" src="../js/admin_update_dataset_module.js"></script>
+  <script src="../js/admin_update_dataset.js">
+    
+  </script>
+  </html>

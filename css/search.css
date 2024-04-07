@@ -182,6 +182,10 @@ ul#list {
   overflow-y: scroll;
 }
 
+ul#list::-webkit-scrollbar {
+  display: none;
+}
+
 /* ul:before {
   content:'desserts';
   position:absolute;

@@ -1,0 +1,302 @@
+  /***
+   Dynamic Card Styling
+   using the :has() pseudo-class
+  
+   SKIP TO LINE 77 FOR :has FUNCTIONALITY
+   ***/
+   section {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+  }
+  
+  div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% - 20px);
+    margin: 10px;
+    padding-bottom: 20px;
+    background: #eee;
+    border-radius: 6.6666666667px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 500px) {
+    div {
+      flex-basis: calc((100% / 2) - 20px);
+    }
+  }
+  @media screen and (min-width: 700px) {
+    div {
+      flex-basis: calc((100% / 3) - 20px);
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    div {
+      flex-basis: calc((100% / 4) - 20px);
+    }
+  }
+  
+  img {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  h2, h3, p, a {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 6.6666666667px;
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 0.875rem;
+  }
+  
+  a {
+    align-self: flex-start;
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: var(--bs-danger);
+    background-size: 50%;
+    border-radius: 100%;
+    transition: 250ms all ease-in-out;
+  }
+  
+  div:has(img) a {
+    margin-top: auto;
+  }
+
+  .container a {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #1abc9c;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  top: 5px;
+}
+.container a:after {
+  content: "";
+  position: absolute;
+  background: #1abc9c;
+  height: 2px;
+  width: 0%;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  transition: 0.35s ease;
+}
+.container a:hover:after, .container a:focus:after, .container a:active:after {
+  width: 100%;
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  font-family: "Varela Round", serif;
+}
+
+.button_container {
+  position: fixed;
+  bottom: 2%;
+  right: min(5%, 200px);
+  cursor: pointer;
+  z-index: 100;
+  background: none;
+  transition: opacity 0.25s ease;
+}
+.button_container:hover {
+  opacity: 0.7;
+}
+
+.overlay {
+  position: fixed;
+  background: #1abc9c;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+  margin: 0px;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-family: "Varela Round", serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+#add_data_btn {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: royalblue;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+#add_data_btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid royalblue;
+}
+
+#add_data_btn span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+#add_data_btn:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+}
+
+#add_data_btn:hover {
+  color: white;
+}
+
+#add_data_btn:active span::before {
+  background: #2751cd;
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 10px;
+  position: relative;
+  padding-top: 1rem;
+  background: none;
+}
+
+.inputGroup input {
+  font-size: 1rem;
+  padding: 1rem;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  padding: 1rem;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #e8e8e8;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
+.confirm_add {
+
+ height: 2.3em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+
+.confirm_add:hover {
+ color: black;
+}
+
+.confirm_add:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+.confirm_add:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+#preview_anime_des::-webkit-scrollbar{
+  display: none;
+}

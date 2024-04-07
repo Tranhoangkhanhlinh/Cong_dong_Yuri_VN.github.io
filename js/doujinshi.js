@@ -26,7 +26,7 @@ $(document).ready(function(){
                 <div class="preview_d" style="height: 100%; width: 100%;align-content: space-around;">
                     <div class="content">
                         <div class="content-overlay"></div>
-                        <img class="content-image" src="`+element.page[0]+`" style="max-height: 100%; max-width: 100%; object-fit: cover">
+                        <img class="content-image" src="`+if_drive(element.page[0])+`" style="max-height: 100%; max-width: 100%; object-fit: cover">
                         <div class="content-details fadeIn-bottom">
                             <a onclick="on('`+element.link+`')"><h3 class="content-title">Nhấp vào đây để đọc tiếp</h3></a>
                             <a href="`+element.link+`" target="_blank"><p class="content-text">Nhấp vào đây để đến bài viết gốc</p></a>
@@ -45,7 +45,7 @@ function on(link) {
             if(element.link == link)
             {
                 element.page.forEach(ele=>{
-                    $(".mySwiper_overlay").append(`<swiper-slide><img src="`+ele+`" style="max-height: 100%; max-width:100%"></swiper-slide>`)
+                    $(".mySwiper_overlay").append(`<swiper-slide><img src="`+if_drive(ele)+`" style="max-height: 100%; max-width:100%"></swiper-slide>`)
                 })
                 return;
             }
@@ -57,4 +57,13 @@ function on(link) {
   document.getElementById("overlay").style.display = "none";
   $(".mySwiper_overlay").html("")
   document.getElementById("swiper_container").style.display = "block";
+}
+
+function if_drive(str){
+    if(str.indexOf("drive.google.com")!= -1){
+    return "https://drive.google.com/thumbnail?id="+ str.substring(str.indexOf('file/d/')+7, (str.indexOf('/view?'))) + "&sz=w1000"
+    }
+    else{
+        return str;
+    }
 }

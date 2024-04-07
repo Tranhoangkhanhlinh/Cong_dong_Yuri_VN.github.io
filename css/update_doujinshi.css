@@ -1,0 +1,270 @@
+
+.swiper {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .overlay_img {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, .7);
+overflow: hidden;
+width: 100%;
+height: 0;
+transition: .5s ease;
+}
+
+.swiper-slide:hover .overlay_img {
+height: 100%;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: center;
+}
+
+.btn {
+padding: 10px 20px;
+text-transform: uppercase;
+border-radius: 8px;
+font-size: 17px;
+font-weight: bold;
+color: #ffffff80;
+text-shadow: none;
+background: transparent;
+cursor: pointer;
+box-shadow: transparent;
+border: 1px solid #ffffff80;
+transition: 0.5s ease;
+user-select: none;
+}
+
+.btn:hover,
+:focus {
+color: var(--text_color);
+background: var(--bg_color);
+border: 1px solid var(--bg_color);
+text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+box-shadow: 0 0 5px var(--bg_color), 0 0 20px var(--bg_color), 0 0 50px var(--bg_color),
+  0 0 100px var(--bg_color);
+}
+
+.add_doujinshi_data {
+width: 10em;
+position: fixed;
+height: 3.5em;
+bottom: 50px;
+right: 50px;
+border: 3px ridge #149CEA;
+outline: none;
+background-color: transparent;
+color: blue;
+transition: 1s;
+border-radius: 0.3em;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+z-index: 10;
+}
+
+.add_doujinshi_data::after {
+content: "";
+position: absolute;
+top: -10px;
+left: 3%;
+width: 95%;
+height: 40%;
+background-color: white;
+transition: 0.5s;
+transform-origin: center;
+}
+
+.add_doujinshi_data::before {
+content: "";
+transform-origin: center;
+position: absolute;
+top: 80%;
+left: 3%;
+width: 95%;
+height: 40%;
+background-color: white;
+transition: 0.5s;
+}
+
+.add_doujinshi_data:hover::before, .add_doujinshi_data:hover::after {
+transform: scale(0)
+}
+
+.add_doujinshi_data:hover {
+box-shadow: inset 0px 0px 25px #1479EA;
+}
+
+.overlay {
+height: 100%;
+width: 100%;
+display: none;
+position: fixed;
+z-index: 11;
+top: 0;
+left: 0;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+position: relative;
+width: 100%;
+text-align: center;
+}
+
+.overlay a {
+padding: 8px;
+text-decoration: none;
+font-size: 36px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+color: #f1f1f1;
+}
+
+.overlay .closebtn {
+position: absolute;
+top: 20px;
+right: 45px;
+font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+.overlay a {font-size: 20px}
+.overlay .closebtn {
+font-size: 40px;
+top: 15px;
+right: 35px;
+}
+}
+
+.doujinshi_box {
+position: relative;
+padding: 40px;
+background: rgba(24, 20, 20, 0.987);
+box-sizing: border-box;
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
+border-radius: 10px;
+}
+
+.doujinshi_box .doujinshi_data {
+position: relative;
+}
+
+.doujinshi_box .doujinshi_data input {
+width: 100%;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+margin-bottom: 30px;
+border: none;
+border-bottom: 1px solid #fff;
+outline: none;
+background: transparent;
+}
+
+.doujinshi_box .doujinshi_data label {
+position: absolute;
+top: 0;
+left: 0;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+pointer-events: none;
+transition: .5s;
+}
+
+.doujinshi_box .doujinshi_data input:focus ~ label,
+.doujinshi_box .doujinshi_data input:valid ~ label {
+top: -20px;
+left: 0;
+color: #bdb8b8;
+font-size: 12px;
+}
+
+.doujinshi_box form a {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #ffffff;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 40px;
+letter-spacing: 4px
+}
+
+.doujinshi_box a:hover {
+background: #03f40f;
+color: #fff;
+border-radius: 5px;
+box-shadow: 0 0 5px #03f40f,
+            0 0 25px #03f40f,
+            0 0 50px #03f40f,
+            0 0 100px #03f40f;
+}
+
+.doujinshi_box a span {
+position: absolute;
+display: block;
+}
+
+form .page{
+  max-height: calc(90vh - 312px);
+  overflow-y: scroll;
+  padding-top: 10px;
+}
+
+form .page::-webkit-scrollbar {
+width: 10px;
+}
+form .page::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 5px;
+}
+
+form .page::-webkit-scrollbar-track{
+  display: none
+}
+
+@keyframes btn-anim1 {
+0% {
+  left: -100%;
+}
+
+50%,100% {
+  left: 100%;
+}
+}

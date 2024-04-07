@@ -3,12 +3,12 @@ $(document).ready(function(){
     get_data('dataset').then(function(data) {
     data.forEach(element => {
         var alternative_title = [];
-        element.name.forEach(ele => { 
-            if (ele.vi !== undefined){ alternative_title.push(ele.vi)};
-            if (ele.en !== undefined){ alternative_title.push(ele.en)};
-            if (ele.jp !== undefined){ alternative_title.push(ele.jp)};
-            if (ele.jp_ro !== undefined){ alternative_title.push(ele.jp_ro)};
-        })
+        console.log(element)
+        if (element.name.vi != "X"){ alternative_title.push(element.name.vi)};
+        if (element.name.en != "X"){ alternative_title.push(element.name.en)};
+        if (element.name.jp != "X"){ alternative_title.push(element.name.jp)};
+        if (element.name.jp_ro != "X"){ alternative_title.push(element.name.jp_ro)};
+
         if(alternative_title.length != 0) {$('#list').append(`<a href="`+element.link+`" target="_blank"><li class="in"><strong>`+element.title +`</strong> (`+alternative_title.join(" - ")+`)</li></a>`)}
         
     });

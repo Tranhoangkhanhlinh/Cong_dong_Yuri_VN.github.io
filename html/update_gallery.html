@@ -1,0 +1,43 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="../css/update_gallery.css">
+
+  
+  
+</head>
+
+<body>
+  <div class="container">
+		<h1 class="heading">Kho ảnh</span></h1>
+		<div class="gallery"></div>
+	<button id="add_data_image" onclick="openNav()">Thêm ảnh</button>
+	<div id="myNav" class="overlay">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content grid grid-cols-3 gap-4"  style="height: max-content;">
+			<div class="flex flex-col items-center justify-center dark col-span-2">
+				<div class="w-full bg-gray-800 rounded-lg shadow-md p-6" style="max-width: 90%; height: max-content;">
+				  <h2 class="text-5xl font-bold text-sky-400/100 m-4 p-4">Thêm ảnh</h2>
+				  <form class="flex flex-col m-8 p-8">
+					<input id="post_link" placeholder="Đường dẫn đến bài viết" class="text-5xl bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text">
+					<input id="image_link" placeholder="Đường dẫn đến ảnh" class="text-5xl bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text">
+					<button onclick="add_image_data()" class="text-4xl p-8 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-600 hover:to-blue-600 transition ease-in-out duration-150" type="button">Thêm ảnh</button>
+				  </form>
+				</div>
+			</div>
+			<div class="flex flex-col items-center justify-center dark">
+				<img id="image_preview_link" src="https://dummyimage.com/415x600/333/ccc" style="width: 70%;width: 70%; object-fit: contain;">
+			</div>
+		</div>
+	  </div>
+</div>
+<script  src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="module" src="../js/admin_update_gallery_module.js"></script>
+      <script src="../js/admin_update_gallery.js"></script>
+
+  
+
+
+
+</body></html>
