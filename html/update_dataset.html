@@ -194,13 +194,17 @@
   flex-direction: column;
   border: 1px solid white;
   padding: 120px 40px;
-  padding-top: 60px;
-  padding-bottom: 90px;
   padding-right: 40px;
   padding-left: 40px;
   background-color: black;
   border-radius: 20px;
   position: relative;
+  height: calc(90% - 110px);
+    overflow: scroll;
+}
+
+.form::-webkit-scrollbar{
+  display: none;
 }
 
 .form p {
