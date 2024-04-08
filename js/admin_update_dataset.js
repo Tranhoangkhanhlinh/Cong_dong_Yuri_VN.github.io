@@ -15,7 +15,7 @@ function openNav() {
   $(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
   async function add_dataset(data_value) {
     const { set_data } = await import('./firebase.js');
-    set_data("dataset", data_value);
+    set_data("dataset", data_value).then(function(){window.location.reload()});
   }
   async function get_doc_dataset(data_value) {
     const { get_doc_data } = await import('./firebase.js');
