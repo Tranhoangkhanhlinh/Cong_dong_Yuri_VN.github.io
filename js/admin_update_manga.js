@@ -56,6 +56,7 @@ function openNav() {
               }
             });
     })
+    $(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
     function add_update_manga_data(id){
           if(id!=""){
             delete_firebase(id)

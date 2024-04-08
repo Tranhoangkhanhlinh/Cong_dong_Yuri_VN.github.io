@@ -17,6 +17,7 @@ function closeNav() {
   $("#image_preview_link").attr("src","https://dummyimage.com/415x600/333/ccc");
   $("#image_link").val("");
 }
+$(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
 $(document).ready(function(){
 	$("#image_link").on("input", function() {
           $("#image_preview_link").attr("src",$(this).val());

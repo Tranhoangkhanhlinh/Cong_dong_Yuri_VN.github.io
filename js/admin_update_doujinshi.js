@@ -10,6 +10,7 @@ async function delete_doujinshi(data_value) {
   const { delete_data } = await import('./firebase.js');
   delete_data('doujinshi', data_value).then(function(){window.location.reload()});
   }
+  $(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
   async function get_doc_doujinshi(data_value) {
     const { get_doc_data } = await import('./firebase.js');
     return get_doc_data('doujinshi', data_value);

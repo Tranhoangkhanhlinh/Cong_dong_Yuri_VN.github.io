@@ -12,7 +12,7 @@ function openNav() {
       $("#JP").val("");
       $("#JP_ro").val("");
   }
-  
+  $(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
   async function add_dataset(data_value) {
     const { set_data } = await import('./firebase.js');
     set_data("dataset", data_value);

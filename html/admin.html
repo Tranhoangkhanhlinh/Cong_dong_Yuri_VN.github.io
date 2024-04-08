@@ -36,6 +36,7 @@ a:focus {
   overflow-x: hidden;
   background: #222;
   transition: all 0.5s ease;
+
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -63,6 +64,12 @@ a:focus {
   margin: 0;
   padding: 0;
   list-style: none;
+  height: calc(100% - 75px);
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-nav > :last-child {
+  margin-top: auto;
 }
 .sidebar-nav > li {
   text-indent: 10px;
@@ -282,22 +289,25 @@ a:focus {
         <a href="#" id="home" onclick="change_panel(this.id)"><i class="fa fa-home"></i>Trang Chủ Admin</a>
       </li>
       <li >
-        <a href="#" id="anime" onclick="change_panel(this.id)"><i class="fa fa-plug"></i>Anime</a>
+        <a href="#" id="anime" onclick="change_panel(this.id)"><i class="fa fa-eye"></i>Anime</a>
       </li>
       <li >
-        <a href="#" id="manga" onclick="change_panel(this.id)"><i class="fa fa-user"></i>Manga</a>
+        <a href="#" id="manga" onclick="change_panel(this.id)"><i class="fa fa-book"></i>Manga</a>
       </li>
       <li >
-        <a href="#" id="image" onclick="change_panel(this.id)"><i class="fa fa-user"></i>Image</a>
+        <a href="#" id="image" onclick="change_panel(this.id)"><i class="fa fa-picture-o"></i>Image</a>
       </li>
       <li >
-        <a href="#" id="doujinshi" onclick="change_panel(this.id)"><i class="fa fa-user"></i>Doujinshi</a>
+        <a href="#" id="doujinshi" onclick="change_panel(this.id)"><i class="fa fa-newspaper-o"></i>Doujinshi</a>
       </li>
       <li >
-        <a href="#" id="dataset" onclick="change_panel(this.id)"><i class="fa fa-user"></i>Database</a>
+        <a href="#" id="dataset" onclick="change_panel(this.id)"><i class="fa fa-database"></i>Database</a>
       </li>
       <li >
-        <a href="#" id="chatbot" onclick="change_panel(this.id)"><i class="fa fa-user"></i>Chatbot</a>
+        <a href="#" id="chatbot" onclick="change_panel(this.id)"><i class="fa fa-comment-o"></i>Chatbot</a>
+      </li>
+      <li >
+        <a href="#" id="logout" onclick="change_panel(this.id)"><i class="fa fa-power-off"></i>Logout</a>
       </li>
     </ul>
   </aside>
@@ -319,7 +329,7 @@ a:focus {
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script>
-
+$(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
 $('#sidebar-toggle').on('click', e => {
   e.preventDefault();
   document.querySelector('#wrapper').classList.toggle('toggled');
@@ -351,6 +361,10 @@ function change_panel(clicked_id)
     break;
     case 'chatbot':
     $('#main_content').attr("src","update_chatbot.html");
+    break;
+    case 'logout':
+    window.localStorage.removeItem("admin");
+    window.location.replace("../index.html");
     break;
   }
   }

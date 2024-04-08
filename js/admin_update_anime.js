@@ -10,6 +10,7 @@ async function setJSONAsync(data_value) {
     const { get_doc_data } = await import('./firebase.js');
     return get_doc_data('anime', data_value);
     }
+    $(document).ready(function(){if(window.localStorage.getItem("admin")=== null){window.location.replace('../index.html')}})
     $(document).ready(function(){
         $("#confirm_add").on('click', function(){
             add_update_anime($("#anime_id").val())
