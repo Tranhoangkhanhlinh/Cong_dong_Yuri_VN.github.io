@@ -26,7 +26,7 @@ $(document).ready(function(){
                 <div class="preview_d" style="height: 100%; width: 100%;align-content: space-around;">
                     <div class="content">
                         <div class="content-overlay"></div>
-                        <img class="content-image" src="`+if_drive(element.page[0])+`" style="max-height: 100%; max-width: 100%; object-fit: cover">
+                        <img class="content-image" loading="lazy" src="`+if_drive(element.page[0])+`" style="max-height: 100%; max-width: 100%; object-fit: cover">
                         <div class="content-details fadeIn-bottom">
                             <a onclick="on('`+element.link+`')"><h3 class="content-title">Nhấp vào đây để đọc tiếp</h3></a>
                             <a href="`+element.link+`" target="_blank"><p class="content-text">Nhấp vào đây để đến bài viết gốc</p></a>

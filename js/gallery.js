@@ -6,7 +6,7 @@ $(document).ready(function(){
         $('body').append(`<div class="page-wrapper"><div class="content">`)
         $('.content').append(`<div class="page">`)
             data.forEach(element => {
-                $('.page').append(`<a href="`+element.link+`" target="_blank"><div class="item"><img src="`+element.link_img+`"></div></a>`)
+                $('.page').append(`<a href="`+element.link+`" target="_blank"><div class="item"><img loading="lazy" src="`+element.link_img+`"></div></a>`)
             });             
         
     });

@@ -59,7 +59,7 @@ $(document).ready(function(){
             console.log(element)
             swiper.appendSlide(`
             <div class="swiper-slide">
-        <img src="`+if_drive(element.page[0])+`" class="image">
+        <img loading="lazy" src="`+if_drive(element.page[0])+`" class="image">
         <div class="overlay_img">
             <div class="text" style="display: grid; ">
                 <button class="btn" style="--text_color: white; --bg_color: orange" onclick="javascript:window.open('`+element.link+`')">Đi đến bài viết</button>
@@ -127,7 +127,7 @@ function openNav() {
                   </div>
         `);
         $('.preview').append(`
-            <img src="`+if_drive(element)+`" style="margin: 10px; object-fit: contain;">
+            <img loading="lazy" src="`+if_drive(element)+`" style="margin: 10px; object-fit: contain;">
         `)
       })
       $('#confirm_doujinshi').text("Xác nhận sửa");

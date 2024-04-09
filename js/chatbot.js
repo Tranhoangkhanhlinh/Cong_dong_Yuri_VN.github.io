@@ -60,7 +60,7 @@ $(function() {
         {
                 if(JSON.parse(localStorage.getItem("anime")) !== undefined)
                 {
-                    var list_anime = JSON.parse(localStorage.getItem("chatbot"));
+                    var list_anime = JSON.parse(localStorage.getItem("anime"));
                     var list_suggest_anime = [];
                     for (var i = 0; i<5; i++){
                         var get_anime = list_anime[Math.floor(Math.random()*list_anime.length)];
@@ -76,7 +76,7 @@ $(function() {
         {
                 if(JSON.parse(localStorage.getItem("manga")) !== undefined)
                 {
-                    var list_manga = manga;
+                    var list_manga = JSON.parse(localStorage.getItem("manga"));
                     var list_suggest_manga = [];
                     for (var i = 0; i<5; i++){
                         var get_manga = list_manga[Math.floor(Math.random()*list_manga.length)];
