@@ -12,7 +12,9 @@ function openNav() {
     $("#manga_cover_art").val("")
     $("#manga_des").val("");
     $("#manga_link").val("");
-    $("#manga_id").val("")
+    $("#manga_id").val("");
+    $("#add_update_manga_data").text("Xác nhận thêm");
+    $("#add_update_manga_data").attr("onclick","add_update_manga_data('')");
     }
     async function add_firebase(data_value) {
     const { set_data } = await import('./firebase.js');
